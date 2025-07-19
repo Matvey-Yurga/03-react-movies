@@ -5,7 +5,7 @@ interface SearchBarProps{
 }
 
 export default function SearchBar({onSubmit}: SearchBarProps) {
-    const hendleSubmitForm = (FormData: FormData) => {
+    const handleSubmitForm = (FormData: FormData) => {
         const query = FormData.get("query") as string;
         if (!query.trim()) {
             toast.error("Please enter your search query.")
@@ -24,7 +24,7 @@ export default function SearchBar({onSubmit}: SearchBarProps) {
     >
      Powered by TMDB
      </a>
-    <form className={styles.form} action={hendleSubmitForm}>
+    <form className={styles.form} action={handleSubmitForm}>
      <input
      className={styles.input}
      type="text"

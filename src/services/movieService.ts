@@ -10,11 +10,8 @@ export const fetchMovies = async (query: string): Promise<Movie[]> => {
     const myKey = import.meta.env.VITE_API_KEY;
     const response = await axios.get<MovieResponse>(`https://api.themoviedb.org/3/search/movie?query=${query}`,
         {
-            params: {
-                query
-            },
             headers: {
-                Authorization: `Bearer ${myKey} `
+                Authorization: `Bearer ${myKey}`
             }
         }
     )
